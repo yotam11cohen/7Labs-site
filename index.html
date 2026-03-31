@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7Labs Health — Revolutionizing Longevity Through Hair Metabolomics</title>
+  <meta name="description" content="7Labs Health profiles 3,806+ metabolic biomarkers from a single hair sample, delivering years of non-invasive health intelligence backed by IRB-approved clinical research.">
+  <meta property="og:title" content="7Labs Health — Revolutionizing Longevity Through Hair Metabolomics">
+  <meta property="og:description" content="Precision health intelligence through hair metabolomics. Profile your complete metabolic history — non-invasive, longitudinal, and scientifically validated.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://7labshealth.com">
+  <meta property="og:image" content="https://7labshealth.com/og-image.jpg">
+  <link rel="canonical" href="https://7labshealth.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="#home" class="navbar__logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" stroke="#2563EB" stroke-width="2"/>
+          <path d="M9 14 L14 9 L19 14 L14 19 Z" fill="#2563EB"/>
+          <circle cx="14" cy="14" r="3" fill="#10B981"/>
+        </svg>
+        <span>7Labs Health</span>
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#science" class="navbar__link">Science</a></li>
+        <li><a href="#results" class="navbar__link">Results</a></li>
+        <li><a href="#faq" class="navbar__link">FAQ</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+        <li><a href="#contact" class="btn btn--primary navbar__cta">Get Tested</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <svg class="hero__svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hg1" cx="30%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2563EB" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#0A1628" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="hg2" cx="80%" cy="30%" r="40%">
+            <stop offset="0%" stop-color="#10B981" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#0A1628" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1440" height="800" fill="#0A1628"/>
+        <ellipse cx="432" cy="400" rx="500" ry="400" fill="url(#hg1)"/>
+        <ellipse cx="1152" cy="240" rx="400" ry="320" fill="url(#hg2)"/>
+        <circle cx="200" cy="150" r="2" fill="#2563EB" opacity="0.4"/>
+        <circle cx="350" cy="200" r="1.5" fill="#10B981" opacity="0.3"/>
+        <circle cx="1200" cy="600" r="2" fill="#2563EB" opacity="0.3"/>
+        <circle cx="1100" cy="700" r="1.5" fill="#10B981" opacity="0.4"/>
+        <circle cx="700" cy="100" r="1" fill="#F8FAFC" opacity="0.2"/>
+        <circle cx="800" cy="750" r="2" fill="#2563EB" opacity="0.2"/>
+        <circle cx="500" cy="600" r="1.5" fill="#10B981" opacity="0.25"/>
+        <circle cx="950" cy="450" r="1" fill="#F8FAFC" opacity="0.15"/>
+      </svg>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__badge fade-in">Non-Invasive &middot; Longitudinal &middot; Scientifically Validated</div>
+      <h1 class="hero__headline fade-in">Revolutionizing Longevity<br>Through Hair Metabolomics</h1>
+      <p class="hero__subheadline fade-in">Discover your complete metabolic history through a single strand of hair &mdash; no needles, no appointments. 7Labs Health profiles 3,806+ biomarkers, delivering years of biochemical insight you can act on today.</p>
+      <div class="hero__actions fade-in">
+        <a href="#science" class="btn btn--secondary">Learn More</a>
+        <a href="#contact" class="btn btn--primary">Get Started</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / MISSION ===== -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__label">About 7Labs</span>
+        <h2 class="section__title">Unlocking the Language<br>of Your Biology</h2>
+        <p class="section__subtitle">Hair is more than keratin &mdash; it&rsquo;s a chronological archive of your metabolic state, recording stress biomarkers, hormonal patterns, and biochemical changes one centimeter at a time.</p>
+      </div>
+      <div class="about__mission fade-in">
+        <p class="about__mission-text">The 7Labs vision is to develop the most comprehensive and holistic tool for stress monitoring. Our IRB-approved platform uses LC-MS/MS to analyze cortisol, sex hormones, endocannabinoids, and thousands of additional metabolites from a single hair sample &mdash; transforming a non-invasive collection into years of actionable health intelligence.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="card fade-in">
+          <div class="card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4C16 4 8 8 8 16s8 12 8 12 8-4 8-12S16 4 16 4Z" stroke="#10B981" stroke-width="2" fill="none"/>
+              <path d="M16 10v6l4 2" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Why 7Labs</h3>
+          <p class="card__text">Hair captures months or years of your metabolic history in a single, non-invasive sample. No blood draws, no hospital visits &mdash; mail us a hair sample and receive a comprehensive retrospective timeline of your biochemical health.</p>
+        </article>
+        <article class="card fade-in">
+          <div class="card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="6" y="4" width="20" height="24" rx="2" stroke="#2563EB" stroke-width="2"/>
+              <path d="M10 12h12M10 16h12M10 20h8" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">What We Test</h3>
+          <p class="card__text">Our dual-platform LC-MS/MS analysis profiles over 3,806 metabolic features &mdash; including cortisol, testosterone, endocannabinoids (2-AG, AEA), amino acids, lipids, and environmental markers &mdash; providing the most holistic biomarker view available.</p>
+        </article>
+        <article class="card fade-in">
+          <div class="card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="12" r="6" stroke="#10B981" stroke-width="2"/>
+              <path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Who We Serve</h3>
+          <p class="card__text">Individuals managing chronic stress, longevity seekers, preventive health advocates, and integrative medicine practitioners who want objective, retrospective data &mdash; not just a snapshot from a single blood draw.</p>
+        </article>
+      </div>
+      <div class="about__credibility fade-in">
+        <div class="credibility__item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 2L3 7v11h14V7L10 2Z" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M7 13l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>IRB-Approved Clinical Protocol</span>
+        </div>
+        <div class="credibility__item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M7 10l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Peer-Reviewed Analytical Methods</span>
+        </div>
+        <div class="credibility__item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M7 10l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Non-Parametric Statistical Validation</span>
+        </div>
+        <div class="credibility__item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M7 10l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>100% Sample Processing Success Rate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCIENCE / METHODOLOGY ===== -->
+  <section id="science" class="section science">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__label">How It Works</span>
+        <h2 class="section__title">From Hair to<br>Health Intelligence</h2>
+        <p class="section__subtitle">Four precise steps transform a simple hair sample into a comprehensive metabolic timeline spanning years of your personal health history.</p>
+      </div>
+      <div class="steps">
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">01</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18" stroke="#2563EB" stroke-width="1.5"/>
+              <path d="M20 10 C20 10 16 15 16 20 C16 25 20 30 20 30 C20 30 24 25 24 20 C24 15 20 10 20 10Z" stroke="#10B981" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="step__content">
+            <h3 class="step__title">Sample Collection</h3>
+            <p class="step__text">A small hair sample from the nape of your neck &mdash; collected at home with no specialist required. Each centimeter of hair represents approximately one month of your metabolic history, meaning a 7 cm sample reveals 7 months of biochemical data.</p>
+          </div>
+        </div>
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">02</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="8" y="6" width="24" height="28" rx="3" stroke="#2563EB" stroke-width="1.5"/>
+              <path d="M14 14h12M14 20h12M14 26h8" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="step__content">
+            <h3 class="step__title">Precision Preparation</h3>
+            <p class="step__text">Our certified lab segments your hair sample into precise 1 cm sections using a standardized SOP, each numbered sequentially from root to tip. This preserves the full chronological record of your metabolic history &mdash; with a 100% sample processing success rate across all clinical studies.</p>
+          </div>
+        </div>
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">03</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="10" stroke="#2563EB" stroke-width="1.5"/>
+              <path d="M20 10V6M20 34v-4M10 20H6M34 20h-4" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="step__content">
+            <h3 class="step__title">Dual-Platform Analysis</h3>
+            <p class="step__text">Two complementary LC-MS/MS platforms &mdash; HILIC for polar compounds (amino acids, cortisol, endocannabinoids) and HSST3 for hydrophobic compounds (lipids, surfactants, pharmaceutical traces) &mdash; together profile 3,806+ metabolic features with &lt;5 ppm mass accuracy.</p>
+          </div>
+        </div>
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">04</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M8 32l8-10 6 6 10-16" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="6" y="6" width="28" height="28" rx="3" stroke="#2563EB" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="step__content">
+            <h3 class="step__title">Personalized Report</h3>
+            <p class="step__text">Advanced bioinformatics and proprietary ML algorithms apply patient-specific baseline normalization to identify your unique stress biomarker patterns, reversible signatures, and temporal drift indicators &mdash; translated into clear, actionable health intelligence.</p>
+          </div>
+        </div>
+      </div>
+      <div class="chart-container fade-in">
+        <h3 class="chart-container__title">Metabolic Profile: Longitudinal Change Across Timepoints</h3>
+        <p class="chart-container__subtitle">Normalized metabolite intensity across 7 hair segments per patient (Segments 1&ndash;3: Before &middot; 4: During &middot; 5&ndash;7: After intervention) &mdash; real data from 7Labs CR1 clinical study</p>
+        <div class="chart-wrapper">
+          <canvas id="metaboliteChart" aria-label="Line chart showing normalized metabolite intensity across 7 timepoints for 3 patients" role="img"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS / DATA ===== -->
+  <section id="results" class="section results">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__label">Clinical Results</span>
+        <h2 class="section__title">What the Data Reveals</h2>
+        <p class="section__subtitle">Our CR1 longitudinal study demonstrated measurable, statistically significant metabolic changes &mdash; and identified reversible biomarker signatures that respond directly to intervention.</p>
+      </div>
+      <div class="results__findings">
+        <div class="finding-card fade-in">
+          <div class="finding-card__stat">13.7%</div>
+          <div class="finding-card__label">Global Metabolic Change</div>
+          <p class="finding-card__text">13.7% of all detected HILIC metabolites showed significant change (vs. 5% expected by chance), confirming meaningful biological signal well above background noise.</p>
+        </div>
+        <div class="finding-card fade-in">
+          <div class="finding-card__stat">25</div>
+          <div class="finding-card__label">Reversible Biomarker Signatures</div>
+          <p class="finding-card__text">25 metabolic features demonstrated clear return-to-baseline behavior &mdash; direct, quantifiable indicators of the body&rsquo;s response and recovery from intervention.</p>
+        </div>
+        <div class="finding-card fade-in">
+          <div class="finding-card__stat">516</div>
+          <div class="finding-card__label">Significantly Changed Features</div>
+          <p class="finding-card__text">Combined across both platforms: 164 polar + 352 hydrophobic metabolic features changed significantly (p&lt;0.05), revealing the full breadth of measurable metabolic response.</p>
+        </div>
+      </div>
+      <div class="chart-container fade-in">
+        <h3 class="chart-container__title">Significant Feature Changes by Platform &amp; Timepoint Comparison</h3>
+        <p class="chart-container__subtitle">Number of metabolic features showing significant change (p&lt;0.05) between each pair of timepoints &mdash; HILIC (polar) vs HSST3 (hydrophobic) platforms</p>
+        <div class="chart-wrapper">
+          <canvas id="resultsChart" aria-label="Bar chart showing number of significantly changed metabolic features between timepoint pairs for HILIC and HSST3 platforms" role="img"></canvas>
+        </div>
+      </div>
+      <div class="results__differential fade-in">
+        <div class="differential__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v20M2 12h20" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="differential__content">
+          <h4>Differential Analysis</h4>
+          <p>Beyond counting significant changes, our normalized differential analysis identifies specific metabolites that are up- or down-regulated across timepoints &mdash; providing a precise molecular fingerprint of your stress response and recovery trajectory over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BY THE NUMBERS ===== -->
+  <section class="numbers" aria-label="Key statistics">
+    <div class="container">
+      <div class="numbers__grid">
+        <div class="number-item fade-in">
+          <div class="number-item__value" data-target="3806" data-suffix="+">0</div>
+          <div class="number-item__label">Metabolic Features Profiled</div>
+        </div>
+        <div class="number-item fade-in">
+          <div class="number-item__value" data-target="49">0</div>
+          <div class="number-item__label">Clinical Samples Analyzed</div>
+        </div>
+        <div class="number-item fade-in">
+          <div class="number-item__value" data-target="25">0</div>
+          <div class="number-item__label">Reversible Biomarker Signatures</div>
+        </div>
+        <div class="number-item fade-in">
+          <div class="number-item__value" data-target="100" data-suffix="%">0</div>
+          <div class="number-item__label">Sample Processing Success Rate</div>
+        </div>
+        <div class="number-item fade-in">
+          <div class="number-item__value" data-target="5" data-prefix="&lt;" data-suffix=" ppm">0</div>
+          <div class="number-item__label">Mass Accuracy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__label">FAQ</span>
+        <h2 class="section__title">Common Questions</h2>
+        <p class="section__subtitle">Everything you need to know before getting started with hair metabolomics.</p>
+      </div>
+      <div class="accordion fade-in" role="list">
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-1">
+            <span>What can hair metabolomics reveal about my health?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-1" hidden>
+            <p>Hair metabolomics analyzes over 3,806 chemical compounds embedded in your hair shaft &mdash; including cortisol (the primary stress hormone), sex hormones (testosterone, progesterone), endocannabinoids (2-AG, AEA), amino acids, and environmental exposures. Each centimeter stores approximately one month of your metabolic history, providing a longitudinal picture that a single blood test cannot offer.</p>
+          </div>
+        </div>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-2">
+            <span>How do I submit my sample?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-2" hidden>
+            <p>After signing up, we&rsquo;ll mail you a collection kit with detailed instructions. Cut a small sample from the nape of your neck (about the thickness of a pencil), place it in the provided envelope, and mail it back to our certified lab. The entire collection takes less than 5 minutes at home, and no specialist is needed.</p>
+          </div>
+        </div>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-3">
+            <span>How far back in time can this test look?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-3" hidden>
+            <p>Hair grows approximately 1 centimeter per month. A 12 cm sample reveals 12 months of your metabolic history. In our clinical studies, subjects provided samples up to 60 cm long, enabling analysis going back several years. The length of your hair sample determines the time window we can analyze.</p>
+          </div>
+        </div>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-4">
+            <span>Is this test covered by insurance?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-4" hidden>
+            <p>Hair metabolomics is a preventive health and wellness service. Most insurance plans do not currently cover this type of comprehensive metabolomic profiling. We offer transparent, direct-pay pricing and can provide documentation for potential HSA/FSA reimbursement. Contact us for current pricing details.</p>
+          </div>
+        </div>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-5">
+            <span>How long does it take to receive results?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-5" hidden>
+            <p>From the time we receive your sample, laboratory processing and bioinformatic analysis typically takes 3&ndash;4 weeks. You&rsquo;ll receive email notification when your personalized report is ready, accessible through your secure online portal.</p>
+          </div>
+        </div>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-6">
+            <span>Is hair metabolomics scientifically validated?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-6" hidden>
+            <p>Yes. Our LC-MS/MS platform has been validated across thousands of compounds with mass accuracy under 5 ppm. Over 10,000 endogenous metabolites have been identified in human hair (Tao Huan et al.), and endocannabinoid levels in hair have been shown to correlate with stress severity (Wilker 2016). Our longitudinal study received full IRB approval at Soroka University Medical Center.</p>
+          </div>
+        </div>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-7">
+            <span>Who should consider getting tested?</span>
+            <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="accordion__panel" id="faq-7" hidden>
+            <p>Anyone interested in understanding their metabolic and stress health history &mdash; especially those managing chronic stress, pursuing longevity optimization, practicing integrative medicine, or curious about how significant life events (illness, major stressors, lifestyle changes) affected their biochemistry over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / CTA ===== -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="contact__content">
+        <div class="contact__copy fade-in">
+          <span class="section__label">Get Started</span>
+          <h2 class="contact__headline">Ready to Get Tested?</h2>
+          <p class="contact__text">Join the growing community of health-forward individuals using hair metabolomics to unlock years of hidden health intelligence. Submit your sample today.</p>
+          <ul class="contact__benefits" role="list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" stroke="#10B981" stroke-width="1.5"/>
+                <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Non-invasive &mdash; no blood draw required
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" stroke="#10B981" stroke-width="1.5"/>
+                <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Done entirely from home
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" stroke="#10B981" stroke-width="1.5"/>
+                <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              3,806+ metabolic features analyzed
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="8" stroke="#10B981" stroke-width="1.5"/>
+                <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              IRB-approved clinical protocol
+            </li>
+          </ul>
+        </div>
+        <form class="contact__form fade-in" action="mailto:info@7labshealth.com" method="post" enctype="text/plain" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" required autocomplete="name" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="jane@example.com">
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Tell us about your health goals or any questions you have..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="navbar__logo" aria-label="7Labs Health home">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <circle cx="14" cy="14" r="13" stroke="#2563EB" stroke-width="2"/>
+            <path d="M9 14 L14 9 L19 14 L14 19 Z" fill="#2563EB"/>
+            <circle cx="14" cy="14" r="3" fill="#10B981"/>
+          </svg>
+          <span>7Labs Health</span>
+        </a>
+        <p class="footer__tagline">Revolutionizing longevity through hair metabolomics.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#science">Science</a>
+        <a href="#results">Results</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__copy">&copy; 2025 7Labs Health. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
