@@ -412,6 +412,15 @@ input, textarea { font-family: inherit; }
   background: var(--color-blue);
   padding: clamp(3rem, 6vw, 5rem) 0;
 }
+.numbers__eyebrow {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2.5rem;
+}
 .numbers__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -500,6 +509,43 @@ input, textarea { font-family: inherit; }
 .form-input::placeholder { color: rgba(255,255,255,0.2); }
 .form-input:focus { outline: none; border-color: var(--color-blue); background: rgba(37,99,235,0.05); }
 .form-textarea { resize: vertical; min-height: 120px; }
+.form-error {
+  font-size: 13px;
+  color: #f87171;
+  margin-top: 5px;
+  display: none;
+}
+.form-input.invalid { border-color: #f87171; }
+.contact__form--success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(16,185,129,0.06);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: var(--radius);
+  min-height: 320px;
+}
+.contact__form--success .success-icon {
+  width: 56px; height: 56px;
+  background: rgba(16,185,129,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact__form--success h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.contact__form--success p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 320px;
+}
 
 /* ----- Footer ----- */
 .footer {

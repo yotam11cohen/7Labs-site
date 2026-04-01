@@ -99,6 +99,78 @@ document.querySelectorAll('.accordion__trigger').forEach(trigger => {
   });
 });
 
+// ----- Contact Form: validation + success state -----
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  // Add inline error containers after each required input
+  contactForm.querySelectorAll('.form-input[required]').forEach(input => {
+    const err = document.createElement('span');
+    err.className = 'form-error';
+    err.setAttribute('aria-live', 'polite');
+    err.id = input.id + '-error';
+    input.setAttribute('aria-describedby', err.id);
+    input.parentNode.appendChild(err);
+
+    // Validate on blur
+    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => {
+      if (input.classList.contains('invalid')) validateField(input);
+    });
+  });
+
+  function validateField(input) {
+    const err = document.getElementById(input.id + '-error');
+    if (!err) return true;
+    let msg = '';
+    if (!input.value.trim()) {
+      msg = input.type === 'email' ? 'Email address is required.' : 'This field is required.';
+    } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+      msg = 'Please enter a valid email address.';
+    }
+    input.classList.toggle('invalid', !!msg);
+    err.textContent = msg;
+    err.style.display = msg ? 'block' : 'none';
+    return !msg;
+  }
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Validate all required fields
+    let valid = true;
+    contactForm.querySelectorAll('.form-input[required]').forEach(input => {
+      if (!validateField(input)) valid = false;
+    });
+    if (!valid) {
+      // Focus first invalid field
+      const first = contactForm.querySelector('.form-input.invalid');
+      if (first) first.focus();
+      return;
+    }
+
+    // Collect values
+    const name    = contactForm.querySelector('#name').value.trim();
+    const email   = contactForm.querySelector('#email').value.trim();
+    const message = contactForm.querySelector('#message').value.trim();
+
+    // Show success state
+    contactForm.innerHTML = `
+      <div class="contact__form--success">
+        <div class="success-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M6 14l6 6L22 8" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Message Received!</h3>
+        <p>Thanks, ${name}. We'll follow up at <strong>${email}</strong> shortly. We look forward to helping you get started.</p>
+      </div>`;
+
+    // Also open mail client as delivery fallback (silent)
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:info@7labshealth.com?subject=7Labs%20Health%20Inquiry&body=${body}`;
+  });
+}
+
 // ----- Chart.js: Metabolite Line Chart (Science section) -----
 const metaboliteCtx = document.getElementById('metaboliteChart');
 if (metaboliteCtx) {
