@@ -99,6 +99,108 @@ document.querySelectorAll('.accordion__trigger').forEach(trigger => {
   });
 });
 
+// ----- Waitlist Modal -----
+const waitlistModal    = document.getElementById('waitlistModal');
+const waitlistClose    = document.getElementById('waitlistClose');
+const waitlistBackdrop = document.getElementById('waitlistBackdrop');
+const waitlistForm     = document.getElementById('waitlistForm');
+
+function openWaitlistModal() {
+  waitlistModal.classList.add('modal--open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => {
+    const first = waitlistModal.querySelector('.form-input');
+    if (first) first.focus();
+  }, 230);
+}
+
+function closeWaitlistModal() {
+  waitlistModal.classList.remove('modal--open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-action="open-waitlist"]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openWaitlistModal();
+  });
+});
+
+waitlistClose.addEventListener('click', closeWaitlistModal);
+waitlistBackdrop.addEventListener('click', closeWaitlistModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !waitlistModal.hidden) closeWaitlistModal();
+});
+
+if (waitlistForm) {
+  waitlistForm.querySelectorAll('.form-input[required]').forEach(input => {
+    const err = document.createElement('span');
+    err.className = 'form-error';
+    err.setAttribute('aria-live', 'polite');
+    err.id = input.id + '-error';
+    input.setAttribute('aria-describedby', err.id);
+    input.parentNode.appendChild(err);
+
+    input.addEventListener('blur', () => validateWaitlistField(input));
+    input.addEventListener('input', () => {
+      if (input.classList.contains('invalid')) validateWaitlistField(input);
+    });
+  });
+
+  function validateWaitlistField(input) {
+    const err = document.getElementById(input.id + '-error');
+    if (!err) return true;
+    let msg = '';
+    if (!input.value.trim()) {
+      msg = input.type === 'email' ? 'Email address is required.' : 'This field is required.';
+    } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+      msg = 'Please enter a valid email address.';
+    }
+    input.classList.toggle('invalid', !!msg);
+    err.textContent = msg;
+    err.style.display = msg ? 'block' : 'none';
+    return !msg;
+  }
+
+  waitlistForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let valid = true;
+    waitlistForm.querySelectorAll('.form-input[required]').forEach(input => {
+      if (!validateWaitlistField(input)) valid = false;
+    });
+    if (!valid) {
+      const first = waitlistForm.querySelector('.form-input.invalid');
+      if (first) first.focus();
+      return;
+    }
+
+    const name  = waitlistForm.querySelector('#wl-name').value.trim();
+    const email = waitlistForm.querySelector('#wl-email').value.trim();
+
+    waitlistModal.querySelector('.modal__dialog').innerHTML = `
+      <button class="modal__close" id="waitlistCloseSuccess" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal__success">
+        <div class="success-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M7 16l7 7L25 9" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Congratulations, ${name}!</h3>
+        <p>You have joined 7LABS Health's Wait list.<br>We'll reach out to <strong>${email}</strong> when your spot opens.</p>
+        <button class="btn btn--outline" id="waitlistCloseSuccess2">Close</button>
+      </div>`;
+
+    document.getElementById('waitlistCloseSuccess')?.addEventListener('click', closeWaitlistModal);
+    document.getElementById('waitlistCloseSuccess2')?.addEventListener('click', closeWaitlistModal);
+  });
+}
+
 // ----- Contact Form: validation + success state -----
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -167,7 +269,7 @@ if (contactForm) {
 
     // Also open mail client as delivery fallback (silent)
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:info@7labshealth.com?subject=7Labs%20Health%20Inquiry&body=${body}`;
+    window.location.href = `mailto:mreshel@gmail.com?subject=Further%20information%20regarding%207LABS%20Health&body=${body}`;
   });
 }
 

@@ -38,7 +38,7 @@
         <li><a href="#results" class="navbar__link">Results</a></li>
         <li><a href="#faq" class="navbar__link">FAQ</a></li>
         <li><a href="#contact" class="navbar__link">Contact</a></li>
-        <li><a href="#contact" class="btn btn--primary navbar__cta">Get Tested</a></li>
+        <li><a href="#" class="btn btn--primary navbar__cta" data-action="open-waitlist">Get Tested</a></li>
       </ul>
     </div>
   </nav>
@@ -76,7 +76,7 @@
       <p class="hero__subheadline fade-in">Discover your complete metabolic history through a single strand of hair &mdash; no needles, no appointments. 7Labs Health profiles 3,806+ biomarkers, delivering years of biochemical insight you can act on today.</p>
       <div class="hero__actions fade-in">
         <a href="#science" class="btn btn--secondary">Learn More</a>
-        <a href="#contact" class="btn btn--primary">Get Started</a>
+        <a href="#" class="btn btn--primary" data-action="open-waitlist">Get Started</a>
       </div>
     </div>
     <div class="hero__scroll-indicator" aria-hidden="true">
@@ -480,6 +480,43 @@
     </div>
   </footer>
 
-  <script src="main.js?v=2"></script>
+  <!-- ===== WAITLIST MODAL ===== -->
+  <div id="waitlistModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="waitlistTitle">
+    <div class="modal__backdrop" id="waitlistBackdrop"></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="waitlistClose" aria-label="Close waitlist form">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal__header">
+        <span class="section__label">Early Access</span>
+        <h2 class="modal__title" id="waitlistTitle">Join the 7Labs Health Waitlist</h2>
+        <p class="modal__subtitle">Be among the first to access precision hair metabolomics testing. We'll notify you the moment spots open.</p>
+      </div>
+      <form id="waitlistForm" class="modal__form" novalidate>
+        <div class="form-group">
+          <label for="wl-name" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="wl-name" name="name" class="form-input" required autocomplete="name" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label for="wl-email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="wl-email" name="email" class="form-input" required autocomplete="email" placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="wl-phone" class="form-label">Phone Number <span class="form-label__optional">(optional)</span></label>
+          <input type="tel" id="wl-phone" name="phone" class="form-input" autocomplete="tel" placeholder="+1 (555) 000-0000">
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Join Waitlist
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js?v=4"></script>
 </body>
 </html>
